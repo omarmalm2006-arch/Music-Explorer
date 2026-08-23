@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Explorer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Music Explorer</h1>
+    <p>Smart Music Discovery & Analytics App</p>
+  </header>
+
+  <main class="app-container">
+    <div class="left-column">
+
+      <section id="controls-section">
+        <h2>Controls & Filters</h2>
+        <div>
+          <label for="searchInput">Search Track:</label>
+          <input type="text" id="searchInput" placeholder="Search by title">
+        </div>
+
+        <div>
+          <label for="genreFilter">Genre:</label>
+          <select id="genreFilter">
+            <option value="All">All Genres</option>
+            <option value="classic">Classic</option>
+            <option value="public">Public</option>
+            <option value="english">English</option>
+            <option value="rap">Rap</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="sortBy">Sort By:</label>
+          <select id="sortBy">
+            <option value="title-asc">Title (A - Z)</option>
+            <option value="title-desc">Title (Z - A)</option>
+            <option value="rating-desc">Highest Rating</option>
+            <option value="rating-asc">Lowest Rating</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="analytics-section">
+        <h2>Library Summary & Logic Checks</h2>
+        <div id="analyticsContent">
+          <div class="stat-card">
+            <span>Total Tracks</span>
+            <div class="strong" id="statTotalTracks">0 Tracks</div>
+          </div>
+          <div class="stat-card">
+            <span>Average Rating</span>
+            <i class="fa-solid fa-star"></i>
+            <div class="strong" id="statAvgRating"> 0.0</div>
+          </div>
+          <div class="stat-card">
+            <span>Top Rated</span>
+            <div class="strong" id="statTopTrack">--</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tracks-section">
+        <h2>Tracks List</h2>
+        <div id="tracksContainer">
+          <!-- displaay tracks -->
+        </div>
+      </section>
+
+    </div>
+
+    <div class="right-column">
+      <section id="add-track-section">
+        <h2>Add New Track</h2>
+        <form id="addForm">
+          <div class="form-group">
+            <label for="trackName">Track Title:</label>
+            <input type="text" id="trackName" placeholder="Enter track title" required>
+          </div>
+          <div class="form-group">
+            <label for="trackCategory">Category:</label>
+            <select id="trackCategory" required>
+              <option value="Classic">Classic</option>
+              <option value="Public">Public</option>
+              <option value="English">English</option>
+              <option value="Rap">Rap</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="trackRating">Rating (1 - 10):</label>
+            <input type="number" id="trackRating" min="1" max="10" step="0.1" placeholder="9.5" required>
+          </div>
+          <div class="form-group">
+            <label for="trackPrice">Price ($):</label>
+            <input type="number" id="trackPrice" min="0" placeholder="250" required>
+          </div>
+          <button type="submit" class="submit-btn"><i class="fa-solid fa-plus"></i> Add Track</button>
+        </form>
+      </section>
+
+      <section id="favorites-section">
+        <h2>Favorites <i class="fa-solid fa-heart" style="color: #ef4444;"></i></h2>
+        <div id="favoritesContainer">
+          <p class="no-results">No favorite tracks added yet.</p>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
